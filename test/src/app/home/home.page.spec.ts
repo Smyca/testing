@@ -7,12 +7,6 @@ import { Observable, of } from 'rxjs';
 
 
 
-const apiServiceMock:{
-  obtenerDatos: ()=>Observable<any> //que retorna
-}={
-  obtenerDatos:()=>  of({})  //como lo retorna //simula observable con of
-
-}
 
 
 
@@ -23,10 +17,7 @@ describe('HomePage', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [HomePage],
-      imports: [IonicModule.forRoot()],
-      providers:[{
-        provide:ApiRickService, useValue:apiServiceMock
-      }]
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);
